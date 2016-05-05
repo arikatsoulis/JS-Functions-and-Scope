@@ -1,0 +1,69 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Bootstrap Boilerplate</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<style>
+			/*Custom CSS here*/
+		</style>
+	</head>
+	<body>
+		
+		<button id="theButton">clciccky me</button>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ <script>
+ 		//****this var is in the GLOBAL scope (local var in line 32)
+	    // var myVariable = ";~}";
+
+	    //****hoisting ther function to be invoked 
+	    // shoutIt();
+
+	    //****this is a function declaration (can be triggered above code)
+	    // function shoutIt () {
+	    // 	alert(myVariable);
+	    // 	var localVariable = "this is a localVariable"
+	    // 	window.localVariable = localVariable;
+	    // }
+
+	    //****invoking the function declaration
+	    // shoutIt();
+
+	    //****a function expression (function expression means trigger has to come after statement) - alternative way of writing line 29
+
+	    // var newShoutIt = function(){
+	    // 	alert(localVariable)
+	    // }();
+
+	    // newShoutIt();
+
+	    //function scope
+
+	    var initDom = function(){
+	    	var trigger = document.getElementById('theButton')
+	    	trigger.addEventListener('click', dateFunction);
+	    }();
+
+	    function dateFunction(){
+	    	var d = new Date();
+	    	var n = d.getFullYear();
+
+	    	setTimeout(function(){ doThis() }, 3000);
+
+	    	function doThis (argument) {
+	 			  alert(n);
+	    	}
+	    };
+
+
+  </script>
+
+	</body>
+	</html>
